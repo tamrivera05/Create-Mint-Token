@@ -1,29 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
+
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract RiveraContract {
-    string public tokenName = "RiveraToken";
-    string public tokenSymbol = "RTC";
-    uint256 public tokenSupply = 0;
+contract RiveraContract is ERC20 {
+    constructor() ERC20("RiveraToken", "RTC") {}
 
-    mapping(address => uint256) public tokenBalances;
-
-    function mintTokens(address to, uint256 amount) public  {
-        tokenSupply += amount;
-        tokenBalances[to] += amount;
+    function mintTokens(address _to, uint256 _amount) public {
+        _mint(_to, _amount);
     }
 
-    function burnTokens(address from, uint256 amount) public {
-        require(tokenBalances[from] >= amount, "Not enough balance to burn");
-        tokenSupply -= amount;
-        tokenBalances[from] -= amount;
+    function burnTokens(uint256 _amount) public {
+        _burn(msg.sender, _amount);
     }
 
-    function transferTokens(address from, address recipient, uint256 amount) public {
-        require(tokenBalances[from] >= amount, "Not enough balance to transfer");
-        tokenBalances[from] -= amount;
-        tokenBalances[recipient] += amount;
-        tokenSupply -= amount;
+    function transfer(address _to, uint256 _amount) public override returns (bool) {
+        _transfer(msg.sender, _to, _amount);
+        return true; 
     }
 }
+

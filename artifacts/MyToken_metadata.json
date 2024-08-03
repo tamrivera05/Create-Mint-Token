@@ -221,7 +221,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "burnTokens",
+				"name": "burn",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -252,7 +252,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "mintTokens",
+				"name": "mint",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -450,7 +450,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"MyToken.sol": "RiveraContract"
+			"MyToken.sol": "MyToken"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -505,11 +505,11 @@
 			]
 		},
 		"MyToken.sol": {
-			"keccak256": "0xab82c74695640ad9d9405caa5023ee92825ab1fd482c09da9620033ee3ea48e8",
+			"keccak256": "0x8aaa1e1755c8ecd3353a4b014a743116327b8e0815ef4fb7125be429581f9776",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://aa92472a71b582d5a10987c35dc43a3075eb31d2799a670106e2c70696ad854f",
-				"dweb:/ipfs/QmWQ9pL8Zegrkejh9R1yKxfhPYFBm1xxnBPf52cRdYn4v2"
+				"bzz-raw://df47c8c22bd821b3728be74547c9328d9e987363439e3d04122f1cc606c71957",
+				"dweb:/ipfs/QmSYebTVcnszwZQzGiDXWL2FoVLVY1tWC6EiVKnmjdP94e"
 			]
 		}
 	},
